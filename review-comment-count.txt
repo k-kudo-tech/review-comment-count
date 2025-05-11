@@ -1,0 +1,45 @@
+// inputに各レビューの配列を格納
+const input = [
+  {
+    "reviewId": 1,
+    "rating": 5,
+    "comment": "Excellent product! 非常に満足です。"
+  },
+  {
+    "reviewId": 2,
+    "rating": 4,
+    "comment": "Works well overall, but could be improved in UX."
+  },
+  {
+    "reviewId": 3,
+    "rating": 3,
+    "comment": "普通に使えるけど、もう少し軽量だと嬉しい。"
+  },
+  {
+    "reviewId": 4,
+    "rating": 2,
+    "comment": "Not as expected. 少し重い。"
+  },
+  {
+    "reviewId": 5,
+    "rating": 1,
+    "comment": ""
+  }
+];
+
+// 変数reviewを宣言しinputから各要素を取り出し
+for(let review of input){
+    // 変数idを宣言し取り出したreviewIdを格納
+    const id = review.reviewId;
+    // 変数lengthを宣言し取り出したコメントの文字数を格納
+    const length = review.comment.length;
+
+    // コメントの文字数がゼロ以下なら「ReviewID: 未入力」を出力
+    if(length <= 0){
+    console.log(`ReviewID ${id}: 文字数: 未入力`);
+        
+    // コメントの文字数が1以上なら「ReviewID：文字数」を出力
+    } else {
+    console.log(`ReviewID ${id}: 文字数: ${length}`);
+    }
+}
